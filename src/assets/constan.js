@@ -1,8 +1,8 @@
 //服务器地址
 const baseUrl = 'http://134.175.174.110/';
-//本地开发地址
-const localUrl = 'http://127.0.0.1'
+const testUrl = 'http://localhost:8811/';
+const projectNAME = 'GDUT-COV19VIURS-VISIABLE-SYSTEM'; //广东工业大学新冠疫情可视化大数据分析系统
 
 export default{
-    baseUrl,localUrl
+    baseUrl,testUrl
 }
