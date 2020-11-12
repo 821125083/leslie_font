@@ -5,8 +5,10 @@ import element from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import axios from 'axios';
 import baseUrl from '@/assets/constan';
+import testUrl from '@/assets/constan';
 
 Vue.prototype.url = baseUrl;
+Vue.prototype.testurl = testUrl;
 Vue.prototype.$axios = axios;
 Vue.config.productionTip = false;
 Vue.use(element);
