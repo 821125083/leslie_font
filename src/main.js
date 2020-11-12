@@ -7,9 +7,11 @@ import axios from 'axios';
 //导入全局定义的常量
 import baseUrl from '@/assets/constan';
 import testUrl from '@/assets/constan';
+import echarts from 'echarts'
 
 //定义全局常量
 Vue.prototype.url = baseUrl;
+Vue.prototype.$echarts = echarts
 Vue.prototype.testurl = testUrl;
 Vue.prototype.$axios = axios;
 Vue.config.productionTip = false;

@@ -1,9 +1,11 @@
 <template>
     <div>
         <h1>抗击肺炎</h1>
+        <div id="myChart" :style="{width: '300px', height: '300px'}">
 
+        </div>
 
-        <el-card class="box-card" >
+        <!-- <el-card class="box-card" >
             <div slot="header" class="clearfix">
                 <span>实时{{cov19Record.updateTime}}数据</span>
                 <el-button style="float: right; padding: 3px 0" type="text" @click="getRealTimeRecord()">获取实时数据</el-button>
@@ -61,7 +63,7 @@
             <el-tag>
             消息详情：{{cov19Record.description}}        
             </el-tag>
-        </el-card>
+        </el-card> -->
 
 
     </div>
@@ -90,10 +92,30 @@ export default {
     },
     //渲染之前就预先加载数据
     mounted(){
-        this.getRealTimeRecord();
+        // this.getRealTimeRecord();
+        this.drawLine();
+
              
     },
     methods:{
+        drawLine(){
+            // 基于准备好的dom，初始化echarts实例
+            let myChart = this.$echarts.init(document.getElementById('myChart'))
+            // 绘制图表
+            myChart.setOption({
+                title: { text: '在Vue中使用echarts' },
+                tooltip: {},
+                xAxis: {
+                    data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+                },
+                yAxis: {},
+                series: [{
+                    name: '销量',
+                    type: 'bar',
+                    data: [5, 20, 36, 10, 10, 20]
+                }]
+            });
+        },
         getRealTimeRecord(){
             this.$axios(this.testUrl+'Cov19Cn/realTimeRecord').then(res=>{
                 this.cov19Record = res.data;
