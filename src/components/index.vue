@@ -33,11 +33,14 @@ export default {
         return {
             password:'13',
             students:[],
+            //使用全局定义的变量
             url:this.url.baseUrl,
 
         }
     },
+    //渲染之前就预先加载数据
     mounted(){
+        console.log(this.localUrl);
         this.$axios(this.url+'leslie/students/findAllStudents').then(res=>{
                 this.students = res.data;
             })  
