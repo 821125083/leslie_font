@@ -55,10 +55,10 @@
             </el-tag>
         </el-card>
 
-        <el-select v-model="selectProvince" placeholder="请选择查询省份">
+        <el-select v-model="selectProvince" placeholder="请选择查询省份" @change="handleChange()" clearable>
             <el-option  v-for="province in provinces" 
                         :key="province.id" 
-                        :value="province.provinceName" 
+                        :value="province.id" 
                         :label="province.provinceName">
             </el-option>
         </el-select>
@@ -66,12 +66,10 @@
 
         </el-table>
 
-
     </div>
 </template>
 
 <script>
-
 
 export default {
     components:{
@@ -83,7 +81,8 @@ export default {
             testUrl:this.url.testUrl,
             cov19Record:Object,
             provinces:[],
-            selectProvince:''
+            selectProvince:'',
+            
         }
     },
     //渲染之前就预先加载数据
@@ -91,15 +90,21 @@ export default {
         this.queryProvince();
     },
     methods:{
+        //初始化实时数据
         getRealTimeRecord(){
             this.$axios(this.testUrl+'Cov19Cn/realTimeRecord').then(res=>{
                 this.cov19Record = res.data;
             }) 
         },
+        //查询所有省份
         queryProvince(){
             this.$axios(this.testUrl+'location/allProvinces').then(res=>{
                 this.provinces = res.data;
             }) 
+        },
+        // 
+        handleChange(){
+            console.log(this.selectProvince);
         }
         
       
