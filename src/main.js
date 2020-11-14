@@ -8,6 +8,7 @@ import axios from 'axios';
 import baseUrl from '@/assets/constan';
 import testUrl from '@/assets/constan';
 import echarts from 'echarts'
+import BaiduMap from 'vue-baidu-map'
 
 //定义全局常量
 Vue.prototype.url = baseUrl;
@@ -16,6 +17,9 @@ Vue.prototype.testurl = testUrl;
 Vue.prototype.$axios = axios;
 Vue.config.productionTip = false;
 Vue.use(element);
+Vue.use(BaiduMap,{
+  ak:'LO009mD9VTnj3tAWee3KwxkXMMHXOIqL'
+})
 
 
 new Vue({
