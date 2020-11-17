@@ -1,9 +1,12 @@
 <template>
     <div>
+        
         <h1>aboard</h1>
         <el-button @click="testcn()">cn</el-button>
         <el-button @click="testab()">aboard</el-button>
-
+        <baidu-map class="bm-view" :center="{lng: 121.4095, lat: 31.1796}" :zoom="15" :scroll-wheel-zoom="true">
+                <bm-marker :position="{lng: 121.4095, lat: 31.1796}" :dragging="true" animation="BMAP_ANIMATION_BOUNCE" />
+        </baidu-map>
     </div>
 </template>
 
@@ -14,6 +17,9 @@ export default {
             testUrl:this.url.testUrl,
 
         }
+    },
+    mounted(){
+        
     },
     methods:{
         testcn(){

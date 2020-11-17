@@ -72,13 +72,12 @@
 <script>
 
 import father from '@/components/father';
-import son from '@/components/son';
-import son2 from '@/components/son2';
+
 
 
 export default {
     components:{
-        father,son,son2
+        father
     },
     data(){
         return {

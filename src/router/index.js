@@ -3,6 +3,8 @@ import Router from 'vue-router'
 import index from '@/components/index'
 import aboard from '@/components/aboard'
 import father from '@/components/father'
+import maps from '@/components/maps'
+
 
 Vue.use(Router)
 
@@ -31,7 +33,7 @@ export default new Router({
     {
       path:'/test',
       name:'test',
-      component:father
+      component:maps
     }
   ]
 })
