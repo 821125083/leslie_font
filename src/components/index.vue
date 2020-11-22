@@ -1,6 +1,7 @@
 <template>
     <div>
             <line-chart :type = "cureCnt"></line-chart>
+            <bar-chart></bar-chart>
             <province></province>
     </div>
 </template>
@@ -8,13 +9,15 @@
 <script>
 
 import LineChart from '@/components/element/LineChart.vue';
-import Province from '@/components/element/Province'
+import Province from '@/components/element/provinces.vue';
+import barChart from '@/components/element/barChart.vue';
 
 
 
 export default {
     components:{
-        LineChart,Province
+        LineChart,Province,barChart
+        
     },
     data(){
         return {
@@ -38,7 +41,6 @@ export default {
         this.queryProvince();
     },
     methods:{
-        
         //初始化实时数据
         getRealTimeRecord(){
             this.$axios(this.testUrl+'Cov19Cn/realTimeRecord').then(res=>{
@@ -62,24 +64,7 @@ export default {
 </script>
 
 <style scoped>
-.text {
-    font-size: 14px;
-  }
 
-  .item {
-    margin-bottom: 18px;
-  }
 
-  .clearfix:before,
-  .clearfix:after {
-    display: table;
-    content: "";
-  }
-  .clearfix:after {
-    clear: both
-  }
 
-  .box-card {
-    width: 480px;
-  }
 </style>

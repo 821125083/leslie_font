@@ -6,6 +6,7 @@ import father from '@/components/father'
 import maps from '@/components/maps'
 
 
+
 Vue.use(Router)
 
 export default new Router({
@@ -33,6 +34,11 @@ export default new Router({
     {
       path:'/test',
       name:'test',
+      component:maps
+    },
+    {
+      path:'/cnMap',
+      name:'cnMap',
       component:maps
     }
   ]

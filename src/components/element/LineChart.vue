@@ -1,6 +1,6 @@
 <template>
-    <div> 
-        <el-select v-model="type" placeholder="请选择" @change="handleChange()" >
+    <div id="lineChart"> 
+        <el-select v-model="type" placeholder="请选择" @change="handleChange()" id="select">
             <el-option
                 v-for="item in types"
                 :key="item.value"
@@ -8,8 +8,9 @@
                 :value="item.value">
             </el-option>
         </el-select>     
+        <el-link @click="showMap()" class="link">查看全国主要城市疫情地图</el-link>
         <div>
-            <span id="title">{{type}}折线图</span>
+            <span id="title">{{type}}疫情趋势图</span>
             <div id="mycharts" :style="{width: '100%', height: '500px'}">
             </div>
         </div> 
@@ -30,8 +31,13 @@ export default {
     data(){
         return{
             selectType:"leslie",
-            type:"cureCnt",
-            types: [{
+            type:"all",
+            types: [
+                {
+                    value: 'all',
+                    label: '所有'
+                },
+                {
                 value: 'cureCnt',
                 label: '治愈人数'
                 }, {
@@ -43,10 +49,7 @@ export default {
                 }, {
                 value: 'sureCnt',
                 label: '确诊人数'
-                }, {
-                    value: 'all',
-                    label: '所有'
-                }],
+                }], 
             //用于前端展示折线图的数据
             EveryDayData:[],
             //时间横轴
@@ -60,6 +63,10 @@ export default {
         }
     },
     methods:{
+        showMap(){
+            //页面跳转
+            window.open('#/cnMap','_blank');
+        },
         handleChange(){
             this.initChartData();
         },
@@ -95,6 +102,8 @@ export default {
                     this.doubtCntAry = doubtCntAry;
 
                     this.drawLineChart(days,cureCntAry);
+                }else{
+                    this.$message.error(res.data.message)
                 }
             })
         },
@@ -142,6 +151,14 @@ export default {
 
 <style scoped>
     .select {
-        margin-top : 10px
+        margin-top : 20px
+    }
+
+    .link {
+        margin-left: 30px;
+    }
+
+    .lineChart {
+        margin: 15px;
     }
 </style>
