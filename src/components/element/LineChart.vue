@@ -8,9 +8,11 @@
                 :value="item.value">
             </el-option>
         </el-select>     
-        <el-link @click="showMap()" class="link">查看全国主要城市疫情地图</el-link>
+        <el-link @click="showMap(true)" class="link">查看全国主要城市疫情地图</el-link>
+        <el-link @click="showMap(false)" class="link">查看全国各省疫情地图</el-link>
+
         <div>
-            <span id="title">{{type}}疫情趋势图</span>
+            <span id="title">疫情趋势图</span>
             <div id="mycharts" :style="{width: '100%', height: '500px'}">
             </div>
         </div> 
@@ -63,9 +65,13 @@ export default {
         }
     },
     methods:{
-        showMap(){
-            //页面跳转
-            window.open('#/cnMap','_blank');
+        showMap(flag){
+            if(flag){
+                //页面跳转
+                window.open('#/cn/cnMap','_blank');
+            }else{
+                window.open("#/cn/cnMap2",'_blank')
+            }
         },
         handleChange(){
             this.initChartData();

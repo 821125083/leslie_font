@@ -5,7 +5,7 @@
 
             </el-option>
         </el-select> -->
-        <h1>数据截止至{{date}}</h1> <el-button @click="handle500">500请按</el-button>
+        <h1>数据截止至:{{date}}</h1> <el-button @click="handle500">500请按</el-button>
         <el-table :data="tableData" @expand-change="expandChange">
 
             <el-table-column prop="provinceName" label="省份"/>
@@ -64,6 +64,8 @@ export default {
     },
     
     mounted(){
+        //获得当前时间
+        this.date = new Date().toLocaleDateString(); 
         this.initProvinceData()
         this.initTableData()
     },
@@ -106,7 +108,6 @@ export default {
                         this.$set(pro,"totalCuring",(pro.totalConfirmed - pro.totalCured));
 
                     })
-                    this.date = "2020-11-21"
                 }else{
                     this.$message.error(res.data.message)
                 

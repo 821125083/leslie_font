@@ -1,6 +1,6 @@
 <template>
     <div>
-            <line-chart :type = "cureCnt"></line-chart>
+            <line-chart :type = "cureCnt" id="lineChart"></line-chart>
             <bar-chart></bar-chart>
             <province></province>
     </div>
@@ -55,7 +55,7 @@ export default {
         },
         //下拉框修改时显示执行的操作 
         handleChange(){
-            console.log(this.selectProvince);
+
         }
         
       
@@ -64,7 +64,9 @@ export default {
 </script>
 
 <style scoped>
-
+    #lineChart {
+        margin-top: 10px;
+    }
 
 
 </style>
