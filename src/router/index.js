@@ -7,6 +7,7 @@ import maps from '@/components/maps';
 import cnMap from '@/components/element/CnMap2';
 import news from '@/components/news';
 import shouye from '@/components/shouye';
+import answer from '@/components/props/answer';
 
 
 Vue.use(Router)
@@ -57,6 +58,11 @@ export default new Router({
       path:'/news',
       name:'news',
       component:news
+    },
+    {
+      path:'/answer',
+      name:'answer',
+      component:answer
     }
   ]
 })

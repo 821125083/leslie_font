@@ -11,7 +11,8 @@ export default {
   components: { CnMap },
     data(){
         return {
-          url:this.url.testUrl,
+          // url:this.url.testUrl,
+          url:this.url.baseUrl,
             location:{
                 lng:'104.114129',
                 lat:'40'

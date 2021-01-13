@@ -43,13 +43,15 @@ export default {
     methods:{
         //初始化实时数据
         getRealTimeRecord(){
-            this.$axios(this.testUrl+'Cov19Cn/realTimeRecord').then(res=>{
+            // this.$axios(this.testUrl+'Cov19Cn/realTimeRecord').then(res=>{
+            this.$axios(this.url+'Cov19Cn/realTimeRecord').then(res=>{
                 this.cov19Record = res.data;
             }) 
         },
         //查询所有省份
         queryProvince(){
-            this.$axios(this.testUrl+'location/allProvinces').then(res=>{
+            // this.$axios(this.testUrl+'location/allProvinces').then(res=>{
+            this.$axios(this.url+'location/allProvinces').then(res=>{
                 this.provinces = res.data;
             }) 
         },

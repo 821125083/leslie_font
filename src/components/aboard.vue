@@ -11,7 +11,9 @@
 export default {
     data(){
         return {
-            testUrl:this.url.testUrl,
+            // testUrl:this.url.testUrl,
+            testUrl:this.url.baseUrl,
+
             center: {lng: 110, lat: 28},
             zoom:5
 

@@ -56,7 +56,8 @@ export default {
     data(){
         return{
             selectedCity:"",
-            url:this.url.testUrl,
+            url:this.url.baseUrl,
+            // url:this.url.testUrl,
             provinces:Array,
             tableData:[],
             date:"",
