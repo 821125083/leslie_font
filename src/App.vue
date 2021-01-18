@@ -5,9 +5,9 @@
       <el-menu-item >GCVS</el-menu-item>
       <el-menu-item index="index">首页</el-menu-item>
       <el-menu-item index="cn">国内疫情数据</el-menu-item>
-      
       <el-menu-item index="aboard" >国外疫情数据</el-menu-item>
       <el-menu-item index="news">疫情实时新闻</el-menu-item>
+      <el-menu-item index="gdut">广东工业大学</el-menu-item>
       <el-menu-item index="callme">联系我们</el-menu-item>
       <!-- <el-menu-item index="test">test</el-menu-item> -->
 

@@ -5,7 +5,8 @@
 
             </el-option>
         </el-select> -->
-        <h1>数据截止至:{{date}}</h1> <el-button @click="handle500">500请按</el-button>
+        <h1>数据截止至:{{date}}</h1> 
+        <!-- <el-button @click="handle500">500请按</el-button> -->
         <el-table :data="tableData" @expand-change="expandChange">
 
             <el-table-column prop="provinceName" label="省份"/>
@@ -56,8 +57,8 @@ export default {
     data(){
         return{
             selectedCity:"",
-            url:this.url.baseUrl,
-            // url:this.url.testUrl,
+            // url:this.url.baseUrl,
+            url:this.url.testUrl,
             provinces:Array,
             tableData:[],
             date:"",
@@ -72,10 +73,10 @@ export default {
     },
     methods:{
         //解决阿里接口报错
-        handle500(){
-            this.initProvinceData()
-            this.initTableData()
-        },
+        // handle500(){
+        //     this.initProvinceData()
+        //     this.initTableData()
+        // },
         //根据省份加载城市疫情数据
         expandChange(row){
             this.$axios(this.url+"Cov19Alibaba/loadCitiesByProvinceName/"+row.provinceName).then(res=>{
