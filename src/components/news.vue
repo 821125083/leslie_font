@@ -25,19 +25,20 @@ export default {
         }
     },
     mounted(){
-        this.$axios(
-            {
-                url:this.url+'news/queryNewsByPage',
-                data:
-                {
-                    searchText:this.searchText ,
-                    pageSize:15,
-                    pageNum:1
-                },
-                method:'post'
-            }).then(res=>{
-            this.tableData = res.data.data.newsList;
-        })
+        this.searchTextChange();
+        // this.$axios(
+        //     {
+        //         url:this.url+'news/queryNewsByPage',
+        //         data:
+        //         {
+        //             searchText:this.searchText ,
+        //             pageSize:15,
+        //             pageNum:1
+        //         },
+        //         method:'post'
+        //     }).then(res=>{
+        //     this.tableData = res.data.data.newsList;
+        // })
     },
     computed:{
         // titleRow(title){

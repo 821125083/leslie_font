@@ -20,7 +20,7 @@ export default {
     data(){
         return{
             url:this.url.testUrl,    //测试环境url
-            // url:this.url.baseUrl,    //测试环境url
+            // url:this.url.baseUrl,    //线上环境url
             provinceNames:Array,     //所有省份数据数组
             totalCured:Array,        //所有治愈数据数组
             totalDeath:Array,

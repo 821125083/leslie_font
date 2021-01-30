@@ -8,7 +8,8 @@ import cnMap from '@/components/element/CnMap2';
 import news from '@/components/news';
 import shouye from '@/components/shouye';
 import answer from '@/components/props/answer';
-
+import gdut from '@/components/props/gdut'
+import worldMap from '@/components/element/worldMap'
 
 Vue.use(Router)
 
@@ -55,6 +56,11 @@ export default new Router({
       component:cnMap
     },
     {
+      path:'/aboard/worldMap',
+      name:'worldMap',
+      component:worldMap
+    },
+    {
       path:'/news',
       name:'news',
       component:news
@@ -63,6 +69,11 @@ export default new Router({
       path:'/answer',
       name:'answer',
       component:answer
+    },
+    {
+      path:'/gdut',
+      name:'gdut',
+      component:gdut
     }
   ]
 })

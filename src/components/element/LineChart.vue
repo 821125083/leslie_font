@@ -8,8 +8,8 @@
                 :value="item.value">
             </el-option>
         </el-select>     
-        <el-link @click="showMap(true)" class="link">查看全国主要城市疫情地图</el-link>
-        <el-link @click="showMap(false)" class="link">查看全国各省疫情地图</el-link>
+        <el-link @click="showMap(true)" class="link" :underline="false"><i class="el-icon-s-data"></i>查看全国主要城市疫情地图</el-link>
+        <el-link @click="showMap(false)" class="link" :underline="false"><i class="el-icon-position"></i>查看全国各省疫情地图</el-link>
 
         <div>
             <span id="title">疫情趋势图</span>

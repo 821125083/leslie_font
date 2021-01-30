@@ -19,8 +19,8 @@ import china from 'echarts/map/js/china.js'
 export default {
     data(){
         return {
-            url : this.url.baseUrl,
-            // url : this.url.testUrl,
+            // url : this.url.baseUrl,
+            url : this.url.testUrl,
             provinceData:[{name:'南海诸岛',value:0}],
             type:'1',
             types: [{
