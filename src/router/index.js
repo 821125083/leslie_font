@@ -10,6 +10,7 @@ import shouye from '@/components/shouye';
 import answer from '@/components/props/answer';
 import gdut from '@/components/props/gdut'
 import worldMap from '@/components/element/worldMap'
+import callme from '@/components/props/callme'
 
 Vue.use(Router)
 
@@ -74,6 +75,11 @@ export default new Router({
       path:'/gdut',
       name:'gdut',
       component:gdut
+    },
+    {
+      path:'/callme',
+      name:'callme',
+      component:callme
     }
   ]
 })

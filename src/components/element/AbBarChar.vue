@@ -35,7 +35,8 @@ export default {
                 id:3,
                 name:'治愈人数'
             },],
-            url:this.url.testUrl,
+            // url:this.url.testUrl,
+            url:this.url.baseUrl,
             data:[],
             countryName:[],
             searchType:1,

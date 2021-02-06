@@ -4,7 +4,7 @@
          <template>
             <el-table
             :data="tableData"
-            style="width: 80%">
+            style="width: 100%">
                 <el-table-column
                     prop="name"
                     label="国家"
@@ -44,8 +44,8 @@ export default {
   components: { AbBarChar },
     data(){
         return {
-            testUrl:this.url.testUrl,
-            // testUrl:this.url.baseUrl,
+            // url:this.url.testUrl,
+            url:this.url.baseUrl,
             tableData:[],
             countryList:[],
             center: {lng: 110, lat: 28},
@@ -59,14 +59,14 @@ export default {
     },
     methods:{
         loadCountryList(){
-            this.$axios(this.testUrl+'/location/allCountry').then(res=>{
+            this.$axios(this.url+'/location/allCountry').then(res=>{
                 if(res.data.code == 200){
                     this.countryList = res.data.data
                 }
             })
         },
         loadTableData(){
-            this.$axios(this.testUrl+'/AbCov19/initAllAbData').then(res=>{
+            this.$axios(this.url+'/AbCov19/initAllAbData').then(res=>{
                 if(res.data.code == 200){
                     this.tableData = res.data.data
                 }

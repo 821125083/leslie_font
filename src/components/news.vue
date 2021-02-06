@@ -1,6 +1,7 @@
 <template>
     <div>
         <el-input v-model="searchText" @change="searchTextChange()" placeholder="请输入标题" style=""></el-input>
+        <!-- <el-button @click="writeExcel()" title="数据将保存到E:\Java学习资料"><i class="el-icon-download"></i>导出数据到Excel表格</el-button> -->
         <el-table :data="tableData" :header-cell-style="{'text-align':'center'}" :cell-style="{'text-align':'center'}">
             <el-table-column prop="title" label="标题" >
                 <template slot-scope="row">
@@ -9,8 +10,6 @@
             </el-table-column>
             <el-table-column prop="authorName" label="作者名称"></el-table-column>
             <el-table-column prop="publishTime" label="发布日期"></el-table-column>
-            <!-- <el-table-column prop="articleAbstract" label="详情"></el-table-column> -->
-
         </el-table>
     </div>
 </template>
@@ -20,7 +19,8 @@ export default {
     data(){
         return {
             searchText:"",
-            url : this.url.testUrl,
+            // url : this.url.testUrl,
+            url : this.url.baseUrl,
             tableData:[]
         }
     },
@@ -46,6 +46,12 @@ export default {
         // }
     },
     methods:{
+        // 写出为Excel
+        writeExcel(){
+            this.$axios.get(this.url+'news/writeNewsToExcel').then(res => {
+                console.log(res);
+            })
+        },
         searchTextChange(){
             this.$axios(
             {

@@ -22,8 +22,8 @@ export default {
   data () {
     return {
       message:'',
-      // url:this.url.baseUrl,
-      url:this.url.testUrl,
+      url:this.url.baseUrl,
+      // url:this.url.testUrl,
       dialogVisible:false
     }
   },

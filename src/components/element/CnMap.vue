@@ -14,8 +14,8 @@ export default {
     data(){
         return {
             citys:Array,
-            // url : this.url.testUrl,
-            url : this.url.baseUrl,
+            url : this.url.testUrl,
+            // url : this.url.baseUrl,
             geoCoordMap : {
                     '合肥':[117.27,31.86],
                     '南京':[118.78,32.04],

@@ -12,8 +12,6 @@ import LineChart from '@/components/element/LineChart.vue';
 import Province from '@/components/element/provinces.vue';
 import barChart from '@/components/element/barChart.vue';
 
-
-
 export default {
     components:{
         LineChart,Province,barChart
@@ -27,7 +25,7 @@ export default {
             doubtCnt:"doubtCnt",
             //使用全局定义的变量 url
             url:this.url.baseUrl,
-            testUrl:this.url.testUrl,
+            // url:this.url.testUrl,
             cov19Record:Object,
             aliCov19Record:Object,
             //远程查询的省份下拉框
@@ -43,14 +41,12 @@ export default {
     methods:{
         //初始化实时数据
         getRealTimeRecord(){
-            // this.$axios(this.testUrl+'Cov19Cn/realTimeRecord').then(res=>{
             this.$axios(this.url+'Cov19Cn/realTimeRecord').then(res=>{
                 this.cov19Record = res.data;
             }) 
         },
         //查询所有省份
         queryProvince(){
-            // this.$axios(this.testUrl+'location/allProvinces').then(res=>{
             this.$axios(this.url+'location/allProvinces').then(res=>{
                 this.provinces = res.data;
             }) 

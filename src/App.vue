@@ -1,7 +1,13 @@
 <template>
   <div id="app" >
-    <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect"  background-color="#545c64"  text-color="#fff"
-  active-text-color="#ffd04b">
+    <el-menu 
+      :default-active="activeIndex" 
+      class="el-menu-demo" 
+      mode="horizontal" 
+      @select="handleSelect" 
+      background-color="#545c64"  
+      text-color="#fff"
+      active-text-color="#ffd04b">
       <el-menu-item >GCVS</el-menu-item>
       <el-menu-item index="index">首页</el-menu-item>
       <el-menu-item index="cn">国内疫情数据</el-menu-item>

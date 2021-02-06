@@ -61,8 +61,8 @@ export default {
             sureCntAry:Array,
             doubtCntAry:Array,
             checkedTypes:[1],
-            url:this.url.testUrl+'Cov19Alibaba/Cov19TrendLineChart'
-            // url:this.url.baseUrl+'Cov19Alibaba/Cov19TrendLineChart'
+            // url:this.url.testUrl+'Cov19Alibaba/Cov19TrendLineChart'
+            url:this.url.baseUrl+'Cov19Alibaba/Cov19TrendLineChart'
         }
     },
     methods:{
