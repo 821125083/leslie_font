@@ -85,10 +85,11 @@ export default {
         },
         //绘图
         initMap(citys,map){
+            // 块初始化
             var mapChart = this.$echarts.init(document.getElementById("mapChart"));
             var geoCoordMap = map;
             
-            // 设置数据
+            // 封装数据
             var convertData =  function (data) {
                 var res = [];
                 for (var i = 0; i < data.length; i++) {

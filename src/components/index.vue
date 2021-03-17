@@ -53,9 +53,14 @@ export default {
         },
         //下拉框修改时显示执行的操作 
         handleChange(){
-
+            this.$axios({
+                url:url,                    // 请求的url
+                param:param,       // 或者 data：data 发送请求附带的数据
+                method:method   // 发送请求的方式 get、post、put、delete
+            }).then(res=>{                    // 回调函数
+                console.log(Res.data);  //对返回的数据进行处理
+            })
         }
-        
       
     }
 }
