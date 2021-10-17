@@ -74,13 +74,14 @@ export default {
                 window.open("#/cn/cnMap2",'_blank')
             }
         },
+        // 选择折线图展示类型
         handleChange(){
             this.initChartData();
         },
-        initChartData(){
+        initChartData(){ // 发起请求渲染折线图
             this.$axios(this.url).then(res=>{
                 if(res.data.code = 200){
-                    var days = new Array();
+                    let days = new Array();
                     var cureCntAry = new Array();
                     var dieCntAry = new Array();
                     var sureCntAry = new Array();
@@ -107,7 +108,6 @@ export default {
                     this.dieCntAry = dieCntAry;
                     this.sureCntAry = sureCntAry;
                     this.doubtCntAry = doubtCntAry;
-
                     this.drawLineChart(days,cureCntAry);
                 }else{
                     this.$message.error(res.data.message)

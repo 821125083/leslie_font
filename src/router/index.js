@@ -11,6 +11,10 @@ import answer from '@/components/props/answer';
 import gdut from '@/components/props/gdut'
 import worldMap from '@/components/element/worldMap'
 import callme from '@/components/props/callme'
+import allData from '@/components/element/allData'
+import AllAbData from '@/components/element/AllAbData.vue'
+import diary from '@/components/diary/diary.vue'
+import login from '@/components/login/login.vue'
 
 Vue.use(Router)
 
@@ -80,6 +84,26 @@ export default new Router({
       path:'/callme',
       name:'callme',
       component:callme
+    },
+    {
+      path:'/allData',
+      name:'allData',
+      component:allData
+    },
+    {
+      path:'/AllAbData',
+      name:'AllAbData',
+      component:AllAbData
+    },
+    {
+      path:'/diary',
+      name:'diary',
+      component:diary
+    },
+    {
+      path:'/login',
+      name:'login',
+      component:login
     }
   ]
 })

@@ -1,6 +1,8 @@
 <template>
     <div>
+        <div>
             <line-chart :type = "cureCnt" id="lineChart"></line-chart>
+        </div>
             <bar-chart></bar-chart>
             <province></province>
     </div>

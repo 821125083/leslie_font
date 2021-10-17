@@ -15,7 +15,7 @@
       <el-menu-item index="news">疫情实时新闻</el-menu-item>
       <el-menu-item index="gdut">广东工业大学</el-menu-item>
       <el-menu-item index="callme">联系我们</el-menu-item>
-      <!-- <el-menu-item index="test">test</el-menu-item> -->
+      <el-menu-item index="diary">我的日记</el-menu-item>
 
     </el-menu>
     <router-view/>
@@ -28,13 +28,21 @@ export default {
   data() {
       return {
         activeIndex: '/cn',
-        activeIndex2: '1'
+        activeIndex2: '1',
+        
       };
     },
     methods: {
       handleSelect(key, keyPath) {
-        // console.log(key, keyPath);
         this.$router.push('/'+keyPath)
+      }
+    },
+    mounted(){
+      console.log('App init');
+      console.log(this.$store.state.loginUser)
+      if (this.$store.state.loginUser) {
+        console.log('please login')
+        // document.location.href = 'http://localhost:8080/login';
       }
     }
   }

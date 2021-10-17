@@ -148,12 +148,12 @@ export default {
                 },
                 //是视觉映射组件，用于进行『视觉编码』，也就是将数据映射到视觉元素（视觉通道）。
                 visualMap: {
-                    pieces: this.pieces,
+                    pieces: this.pieces,  // 显示区间
                     inRange: {
-                        color: ['#d1d4da', '#bacae8', '#96b5ef', '#6797ef', '#3375e4', '#035cf5']
+                        color: ['#d1d4da', '#bacae8', '#96b5ef', '#6797ef', '#3375e4', '#035cf5']  // 不同区间的颜色
                     },
                     textStyle: {
-                        color: '#fff'
+                        color: '#fff' // 文本颜色
                     },
                 },
                 // 提示框，鼠标移入

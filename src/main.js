@@ -9,6 +9,7 @@ import baseUrl from '@/assets/constan';
 import testUrl from '@/assets/constan';
 import echarts from 'echarts'
 import BaiduMap from 'vue-baidu-map'
+import store from '@/assets/store.js'
 
 //定义全局常量
 Vue.prototype.url = baseUrl;
@@ -21,9 +22,11 @@ Vue.use(BaiduMap,{
   ak:'LO009mD9VTnj3tAWee3KwxkXMMHXOIqL'
 });
 
+
 new Vue({
   el: '#app',
   router,
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
+  store:store
 })
