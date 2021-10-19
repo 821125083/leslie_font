@@ -54,8 +54,13 @@ export default {
     methods:{
         // 写出为Excel
         writeExcel(){
-            // this.$axios.get(this.url+'news/writeNewsToExcel').then(res => {
-            //     console.log(res);
+            console.log('tets')
+            let downloadUrl = this.url+'news/writeNewsToExcel';
+            // this.$axios({
+            //     url:this.url+'news/writeNewsToExcel',
+            //     method:'get',
+            //     responseType:'blob'
+            //     }).then(res => {
             // })
             document.location.href = this.url+'news/writeNewsToExcel'
         },
