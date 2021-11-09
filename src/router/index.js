@@ -15,6 +15,7 @@ import allData from '@/components/element/allData'
 import AllAbData from '@/components/element/AllAbData.vue'
 import diary from '@/components/diary/diary.vue'
 import login from '@/components/login/login.vue'
+import register from '@/components/login/register.vue'
 
 Vue.use(Router)
 
@@ -101,9 +102,14 @@ export default new Router({
       component:diary
     },
     {
-      path:'/login',
-      name:'login',
-      component:login
+      path: '/login',
+      name: 'login',
+      component: login
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: register
     }
   ]
 })

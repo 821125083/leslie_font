@@ -7,10 +7,10 @@
           <div>
             <el-form ref="form" :model="loginForm" label-width="80px">
               <el-form-item label="用户名">
-                <el-input v-model="loginForm.name"></el-input>
+                <el-input v-model="loginForm.loginName"></el-input>
               </el-form-item>
               <el-form-item label="密码">
-                <el-input v-model="loginForm.password" show-password></el-input>
+                <el-input v-model="loginForm.loginPassword" show-password></el-input>
               </el-form-item>
               <el-button type="primary" @click="login()">登录</el-button>
               <el-button @click="registe()">注册</el-button>
@@ -28,8 +28,8 @@ export default {
   data () {
     return {
       loginForm: {
-        name: '',
-        password: '',
+        loginName: '',
+        loginPassword: '',
         token: 'token'
       },
       url: this.url.testUrl
@@ -41,7 +41,12 @@ export default {
         console.log(res)
       }).then()
     },
-    registe () {}
+    registe () {
+      this.$router.push('register')
+      // this.$axios.post(this.url + 'user/register', this.loginForm).then(res => {
+      //   console.log(res)
+      // }).then()
+    }
   }
 }
 </script>
