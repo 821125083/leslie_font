@@ -19,7 +19,8 @@
       <el-menu-item index="callme">联系我们</el-menu-item>
       <el-menu-item index="diary">我的日记</el-menu-item>
       <div class="login-info">
-        <el-button type="success" @click="toLogin()" id="login-btn" icon="el-icon-user-solid">登陆</el-button>
+        <el-button type="success" @click="toLogin()" id="login-btn" icon="el-icon-user-solid" >登陆</el-button>
+        <el-button type="primary" @click="consoleLog()" id="login-btn" icon="el-icon-user-solid" >{{loginUser.username}}</el-button>
       </div>
     </el-menu>
     <router-view />
@@ -27,14 +28,25 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 export default {
+
   name: 'App',
   data () {
     return {
       activeIndex: '/cn',
       activeIndex2: '1',
-      url: this.url.testUrl
+      url: this.url.testUrl,
+      loginUserName:''
     }
+  },
+  computed:{
+    ...mapGetters({
+      loginUser : 'getUserInfo'
+    }),
+  },  
+  watch:{
+    
   },
   methods: {
     handleSelect (key, keyPath) {
@@ -51,6 +63,7 @@ export default {
       })
     }
   }
+  
 }
 </script>
 

@@ -28,7 +28,15 @@
 </template>
 
 <script>
+
+import { mapGetters } from 'vuex'
+
 export default {
+  computed: {
+    ...mapGetters({
+        loginUser: 'getUserInfo'
+      })
+    },
   mounted() {
     this.initWeather();
   },
@@ -81,7 +89,7 @@ export default {
     //   }
     // },
     handleSwitchChange() {
-      console.log(this.header);
+      console.log(this.$store.state.loginUser)
     },
     initWeather() {
       this.$axios(this.url + "weather/initWeatherData").then((res) => {

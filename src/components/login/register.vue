@@ -43,7 +43,7 @@ export default {
       this.$axios.post(this.url + 'user/register', this.loginForm).then(res => {
         console.log(res.data.code)
         if (res.data.code === 500) {
-          this.$message(res.data.message)
+          this.$message.error(res.data.message)
         } else {
           this.$message('註冊成功')
         }

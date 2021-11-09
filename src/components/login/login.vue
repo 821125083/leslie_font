@@ -10,10 +10,13 @@
                 <el-input v-model="loginForm.loginName"></el-input>
               </el-form-item>
               <el-form-item label="密码">
-                <el-input v-model="loginForm.loginPassword" show-password></el-input>
+                <el-input
+                  v-model="loginForm.loginPassword"
+                  show-password
+                ></el-input>
               </el-form-item>
-              <el-button type="primary" @click="login()">登录</el-button>
-              <el-button @click="registe()">注册</el-button>
+              <el-button type="primary" @click="login()" :disabled = !canLogin>登录</el-button>
+              <el-button @click="register()">注册</el-button>
             </el-form>
           </div>
         </el-col>
@@ -24,6 +27,7 @@
 </template>
 
 <script>
+
 export default {
   data () {
     return {
@@ -32,20 +36,26 @@ export default {
         loginPassword: '',
         token: 'token'
       },
-      url: this.url.testUrl
+      url: this.url.testUrl,
+      canLogin:true
+    }
+  },
+  mounted(){
+    if (this.$store.state.loginUser.userName) {
+      this.canLogin = false 
     }
   },
   methods: {
     login () {
       this.$axios.post(this.url + 'login', this.loginForm).then(res => {
-        console.log(res)
+        if (res.status === 200) {
+          this.$message.success('登陆成功')
+          this.$store.commit('setUserInfo', res.data.data)
+        }
       }).then()
     },
-    registe () {
+    register () {
       this.$router.push('register')
-      // this.$axios.post(this.url + 'user/register', this.loginForm).then(res => {
-      //   console.log(res)
-      // }).then()
     }
   }
 }
